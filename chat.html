@@ -1,0 +1,51 @@
+<head>
+  <title>Chat</title>
+</head>
+
+<body>
+  <!--<div class="listContainer">-->
+  <!--  <div class="userList">-->
+  <!--    <h4>Who?</h4>-->
+  <!--      {{#each users}}-->
+  <!--        {{> user}}-->
+  <!--      {{/each}}-->
+  <!--  </div>-->
+  <!--</div>-->
+  <div class="container">
+    <header>
+      <h1 class="title">Chat</h1>
+      <h2 class="star">
+        <img src="cat.png" alt="Cat" style="width:30px;height:40px">
+      </h2>
+      {{#if currentUser}}
+        <form class="new-message">
+          <em><input type="text" class="inputbox" name="text"/></em>
+        </form>
+      <!--{{else}}-->
+      <!--  {{> loginButtons}}-->
+      <!--{{/if}}-->
+      
+      {{/if}}
+        {{> loginButtons}}
+    </header>
+
+    <ul>
+      {{#each messages}}
+        {{> message}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
+<template name="message">
+    <li>
+        <button class="delete">&sect;</button>
+        <span class="text"><strong>{{username}}</strong> - {{text}}</span>
+    </li>
+</template>
+
+<template name="user">
+  <li>
+    {{currentUser.username}}
+  </li>
+</template>
